@@ -11,7 +11,7 @@ const DEFAULT_MODEL = process.env.OPENAI_MODEL || 'gpt-5.6-luna';
 
 const upload = multer({
   storage: multer.memoryStorage(),
-  limits: { fileSize: 25 * 1024 * 1024 }
+  limits: { fileSize: 4 * 1024 * 1024 }
 });
 
 app.use(cors({ origin: '*' }));
@@ -254,6 +254,10 @@ Format:
   }
 });
 
-app.listen(PORT, HOST, () => {
-  console.log(`Défi IA central on ${HOST}:${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, HOST, () => {
+    console.log(`Défi IA central on ${HOST}:${PORT}`);
+  });
+}
+
+module.exports = app;
