@@ -98,6 +98,10 @@ function parseJson(text) {
   throw new Error('Réponse IA non exploitable.');
 }
 
+app.get('/', (req, res) => {
+  res.json({ ok: true, service: 'Défi Informatique IA Central', message: 'Serveur Vercel opérationnel' });
+});
+
 app.get('/health', (req, res) => {
   res.json({
     ok: true,

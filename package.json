@@ -2,7 +2,7 @@
   "name": "defi-informatique-central-ai",
   "version": "1.0.0",
   "private": true,
-  "engines": {"node": ">=20"},
+  "engines": {"node": "22.x"},
   "scripts": {"start": "node server.js"},
   "dependencies": {
     "cors": "^2.8.5",
